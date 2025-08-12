@@ -33,11 +33,11 @@ async function main() {
     await mongoose.connect(db_Url);
 }
 
-app.get("/api" , (req,res)=>{
+app.get("/" , (req,res)=>{
     res.render("form", {short : null});
 })
 
-app.post("/api/shorten", async(req,res)=>{
+app.post("/shorten", async(req,res)=>{
     let {url} = req.body;
     let shorturl = "https://localhost:5000/"+nanoid(6);
     const url1 = new Url({
